@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
+import WebFont from 'webfontloader'
+
 import ColumnTwo from './components/ColumnTwo';
 import ColumnOne from './components/ColumnOne';
+import { IGame } from './components/Game';
 
 import { IColors, Colors } from './utils/Colors'
 import styled from 'styled-components'
-import { IGame } from './components/Game';
 
 const defaultGameValue = {
   pointOne: 0,
   pointTwo: 0,
   pointTree: 0
 }
+
+WebFont.load({
+  google: {
+    families: ['Poppins Web:200,400,800', 'sans-serif']
+  }
+})
 
 function App() {
   const [playerOne, setPlayerOne] = useState<IGame>({ ...defaultGameValue })
