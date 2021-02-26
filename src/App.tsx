@@ -25,7 +25,7 @@ const Container = styled.div<{
   color: ${props => Colors[props.fontColor]};
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: stretch;
   min-width: 100vw;
   min-height: 100vh;

@@ -18,6 +18,7 @@ export default function index({}: Props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 0.4;
   justify-content: space-around;
   align-items: center;
 `

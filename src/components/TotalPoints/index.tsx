@@ -6,21 +6,22 @@ import { IColors, Colors } from '../../utils/Colors'
 interface Props {
   value: number
   color: IColors
+  textSize: number
 }
 
-export default function index({ color, value }: Props) {
+export default function index({ color, value, textSize }: Props) {
   return (
-    <Container color={Colors[color]} >
+    <Container color={Colors[color]} textSize={textSize}>
       {value}
     </Container>
   )
 }
 
-const Container = styled.div<{ color: string }>`
+const Container = styled.div<{ color: string, textSize: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
+  font-size: ${props => `${ props.textSize }rem` };
   flex: 1;
   color: ${props => props.color}
 `

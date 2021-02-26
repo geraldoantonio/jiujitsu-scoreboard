@@ -1,10 +1,10 @@
 export const Colors = {
-  primary: "#2646f8",
-  primaryLight: "#2e66e0",
-  secondary: "#F44336",
-  secondaryLight: "#d65249",
-  light: "#e8eaf6",
-  dark: "#030303"
+  primary: "#0444f3",
+  primaryLight: "#2b6edb",
+  secondary: "#dd2c00",
+  secondaryLight: "#ff5722",
+  light: "#e3f2fd",
+  dark: "#0b0c0c"
 }
 
 export type IColors = keyof typeof Colors
