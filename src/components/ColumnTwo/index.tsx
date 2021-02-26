@@ -14,9 +14,9 @@ interface Props {
 export default function ColumnTwo({ totalPointsOne, totalPointsTwo }: Props) {
   return (
     <Container bgColor={'primaryLight'}>
-      <TotalPoints value={totalPointsOne} color={'dark'} textSize={8} />
+      <TotalPoints value={totalPointsOne} color={'dark'} textSize={10} />
       <Clock />
-      <TotalPoints value={totalPointsTwo} color={'light'} textSize={8} />
+      <TotalPoints value={totalPointsTwo} color={'lighter'} textSize={10} />
     </Container>
   )
 }
@@ -25,6 +25,6 @@ const Container = styled.div<{ bgColor: IColors }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  flex: 0.2;
+  flex: 0.3;
   background-color: ${props => Colors[props.bgColor]};
 `

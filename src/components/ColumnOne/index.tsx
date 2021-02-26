@@ -20,7 +20,7 @@ export default function ColumnOne({ playerOne, playerTwo }: Props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 0.4;
+  flex: 0.7;
   justify-content: space-around;
   align-items: center;
 `

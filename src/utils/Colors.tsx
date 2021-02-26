@@ -3,7 +3,8 @@ export const Colors = {
   primaryLight: "#2b6edb",
   secondary: "#dd2c00",
   secondaryLight: "#ff5722",
-  light: "#f8f9fa",
+  light: "#ccc",
+  lighter: "#f8f9fa",
   dark: "#0b0c0c"
 }
 
