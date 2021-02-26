@@ -1,16 +1,18 @@
 import React from 'react'
 
 import styled from 'styled-components'
+import Game, { IGame } from '../Game'
 
 interface Props {
-  
+  playerOne: IGame
+  playerTwo: IGame
 }
 
-export default function ColumnOne({}: Props) {
+export default function ColumnOne({ playerOne, playerTwo }: Props) {
   return (
     <Container>
-     <div>game one</div>
-     <div>game two</div>
+      <Game playerPoints={playerOne} />
+      <Game playerPoints={playerTwo} />
     </Container>
   )
 }
