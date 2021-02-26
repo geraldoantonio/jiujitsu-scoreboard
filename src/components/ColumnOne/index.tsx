@@ -6,7 +6,7 @@ interface Props {
   
 }
 
-export default function index({}: Props) {
+export default function ColumnOne({}: Props) {
   return (
     <Container>
      <div>game one</div>

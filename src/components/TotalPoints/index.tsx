@@ -9,7 +9,7 @@ interface Props {
   textSize: number
 }
 
-export default function index({ color, value, textSize }: Props) {
+export default function TotalPoints({ color, value, textSize }: Props) {
   return (
     <Container color={Colors[color]} textSize={textSize}>
       {value}
