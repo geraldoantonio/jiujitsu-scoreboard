@@ -23,4 +23,5 @@ const Container = styled.div`
   flex: 0.7;
   justify-content: space-around;
   align-items: center;
+  padding: 0 1rem;
 `

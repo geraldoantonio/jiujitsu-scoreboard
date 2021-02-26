@@ -53,9 +53,13 @@ const Container = styled.div`
 `
 
 const Label = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
+  min-height: 2rem;
 `
 
 const Content = styled.div<{ fontSize: number }>`

@@ -43,4 +43,5 @@ const Column = styled.div`
   justify-content: space-around;
   align-items: center;
   flex: 0.25;
+  row-gap: 0.5rem;
 `
