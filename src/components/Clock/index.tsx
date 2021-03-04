@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import Timer from './Timer'
+
 import styled from 'styled-components'
 import { Colors, IColors } from '../../utils/Colors'
 
@@ -9,7 +11,9 @@ export default function Clock() {
   return (
     <Container bgColor={'dark'} textColor={'light'}>
       <div>Tempo Restante</div>
-      <div>00:00</div>
+
+      <Timer durationInSeconds={10} paused={false} />
+
       <div>{playing ? 'Pausar' : 'Continuar'}</div>
     </Container>
   )
