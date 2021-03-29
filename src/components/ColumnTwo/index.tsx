@@ -9,13 +9,14 @@ import Clock from '../Clock'
 interface Props {
   totalPointsOne: number
   totalPointsTwo: number
+  timerInSeconds: number
 }
 
-export default function ColumnTwo({ totalPointsOne, totalPointsTwo }: Props) {
+export default function ColumnTwo({ totalPointsOne, totalPointsTwo, timerInSeconds }: Props) {
   return (
     <Container bgColor={'primaryLight'}>
       <TotalPoints value={totalPointsOne} color={'dark'} textSize={10} />
-      <Clock />
+      <Clock timerInSeconds={timerInSeconds} />
       <TotalPoints value={totalPointsTwo} color={'lighter'} textSize={10} />
     </Container>
   )

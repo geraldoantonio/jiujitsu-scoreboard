@@ -5,7 +5,11 @@ import Timer from './Timer'
 import styled from 'styled-components'
 import { Colors, IColors } from '../../utils/Colors'
 
-export default function Clock() {
+interface Props {
+  timerInSeconds: number
+}
+
+export default function Clock(props: Props) {
   const [playing, setPlaying] = useState<boolean>(false)
   const [endTime, setEndTime] = useState<boolean>(false)
 
@@ -25,7 +29,7 @@ export default function Clock() {
       <>
         <Title textColor={'secondaryLight'}>Tempo Restante</Title>
 
-        <Timer durationInSeconds={10} paused={!playing} endTime={handleEndTimer} />
+        <Timer durationInSeconds={props.timerInSeconds} paused={!playing} endTime={handleEndTimer} />
 
         <Controls>
           <PlayerButton playing={playing} onClick={e => handlePlayer(e)}>

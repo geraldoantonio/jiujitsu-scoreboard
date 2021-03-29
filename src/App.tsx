@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 import WebFont from 'webfontloader'
 
@@ -8,6 +8,7 @@ import { IGame } from './components/Game';
 
 import { IColors, Colors } from './utils/Colors'
 import styled from 'styled-components'
+import ConfigureGame from './components/ConfigureGame';
 
 const defaultGameValue = {
   pointOne: 0,
@@ -21,9 +22,30 @@ WebFont.load({
   }
 })
 
+interface IGameContext {
+  playerOne: IGame
+  playerTwo: IGame
+  timeInSeconds: number
+}
+const GameContext = createContext<IGameContext>({
+  playerOne: {
+    pointOne: 0,
+    pointTwo: 0,
+    pointTree: 0,
+  },
+  playerTwo: {
+    pointOne: 0,
+    pointTwo: 0,
+    pointTree: 0,
+  },
+  timeInSeconds: 0
+})
+
 function App() {
   const [playerOne, setPlayerOne] = useState<IGame>({ ...defaultGameValue })
   const [playerTwo, setPlayerTwo] = useState<IGame>({ ...defaultGameValue })
+  const [timerInSeconds, setTimerInSeconds] = useState<number>(0)
+  const [configuredGame, setConfiguredGame] = useState<boolean>(false)
 
   const [totalPointsToPlayerOne, setTotalPointsToPlayerOne] = useState<number>(0)
   const [totalPointsToPlayerTwo, setTotalPointsToPlayerTwo] = useState<number>(0)
@@ -48,11 +70,29 @@ function App() {
     setTotalPointsToPlayerTwo(result)
   }, [playerTwo])
 
+  const handlePointerToPLayerOne = (currentPlayer: IGame): void => {
+    setPlayerOne(currentPlayer)
+  }
+
+  const handlePointerToPlayerTwo = (currentPlayer: IGame): void => {
+    setPlayerTwo(currentPlayer)
+  }
+
   return (
+    configuredGame ?
     <Container bgColor={'light'} fontColor={'dark'}>
-      <ColumnOne playerOne={playerOne} playerTwo={playerTwo} />
-      <ColumnTwo totalPointsOne={totalPointsToPlayerOne} totalPointsTwo={totalPointsToPlayerTwo} />
-    </Container>
+      <ColumnOne
+        playerOne={playerOne}
+        playerTwo={playerTwo}
+      />
+
+      <ColumnTwo
+        totalPointsOne={totalPointsToPlayerOne}
+        totalPointsTwo={totalPointsToPlayerTwo}
+        timerInSeconds={timerInSeconds}
+      />
+    </Container> :
+    <ConfigureGame />
   );
 }
 
